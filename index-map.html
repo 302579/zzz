@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>浙江端午习俗地图-习俗地图</title>
+  <link rel="stylesheet" href="css/main-主样式.css" type="text/css">
+  <link rel="stylesheet" href="css/map-地图样式.css" type="text/css">
+</head>
+<body>
+  <div id="main">
+    <div class="trans">
+      <h1>浙江端午习俗地图-探索各地习俗</h1>
+      
+      <div class="menu">
+        <a href="index-首页.html">返回首页</a>
+      </div>
+      
+      <!-- 地图区域 -->
+      <div class="map-container">
+        <h2>点击下方地区，了解当地端午习俗</h2>
+        
+        <div class="region-grid">
+          <div class="region-item" onclick="showRegionInfo('杭州')">
+            <div class="region-icon">👑</div>
+            <div class="region-name">杭州</div>
+            <div class="region-desc">西湖之畔的传统习俗</div>
+          </div>
+          
+          <div class="region-item" onclick="showRegionInfo('嘉兴')">
+            <div class="region-icon">🚣</div>
+            <div class="region-name">嘉兴</div>
+            <div class="region-desc">龙舟竞渡的发源地</div>
+          </div>
+          
+          <div class="region-item" onclick="showRegionInfo('宁波')">
+            <div class="region-icon">🫔</div>
+            <div class="region-name">宁波</div>
+            <div class="region-desc">港口城市的独特风情</div>
+          </div>
+          
+          <div class="region-item" onclick="showRegionInfo('绍兴')">
+            <div class="region-icon">🍶</div>
+            <div class="region-name">绍兴</div>
+            <div class="region-desc">黄酒之乡的文化传统</div>
+          </div>
+          
+          <div class="region-item" onclick="showRegionInfo('台州')">
+            <div class="region-icon">🎀</div>
+            <div class="region-name">台州</div>
+            <div class="region-desc">山海之城的民俗特色</div>
+          </div>
+          
+          <div class="region-item" onclick="showRegionInfo('温州')">
+            <div class="region-icon">🐯</div>
+            <div class="region-name">温州</div>
+            <div class="region-desc">瓯越之地的丰富习俗</div>
+          </div>
+        </div>
+        
+        <!-- 轮播控制区域 -->
+        <div class="carousel-controls">
+          <button class="carousel-btn" onclick="prevRegion()" title="上一个地区">◀</button>
+          <button class="autoplay-btn" id="autoplay-btn" onclick="toggleAutoplay()">▶ 开始自动播放</button>
+          <button class="carousel-btn" onclick="nextRegion()" title="下一个地区">▶</button>
+        </div>
+        
+        <!-- 当前地区显示 -->
+        <div class="current-region" id="current-region">当前：未选择</div>
+        
+        <!-- 轮播指示器 -->
+        <div class="carousel-indicators" id="carousel-indicators">
+          <div class="indicator-dot" data-index="0" data-region="杭州" title="杭州" onclick="goToRegion(0)"></div>
+          <div class="indicator-dot" data-index="1" data-region="嘉兴" title="嘉兴" onclick="goToRegion(1)"></div>
+          <div class="indicator-dot" data-index="2" data-region="宁波" title="宁波" onclick="goToRegion(2)"></div>
+          <div class="indicator-dot" data-index="3" data-region="绍兴" title="绍兴" onclick="goToRegion(3)"></div>
+          <div class="indicator-dot" data-index="4" data-region="台州" title="台州" onclick="goToRegion(4)"></div>
+          <div class="indicator-dot" data-index="5" data-region="温州" title="温州" onclick="goToRegion(5)"></div>
+        </div>
+      </div>
+      
+      <!-- 信息展示区域（可拖动） -->
+      <div id="info-box" class="info-box">
+        <div class="info-box-header" id="info-box-header">
+          <h3 id="info-title">地区习俗</h3>
+          <span class="drag-hint">可拖动</span>
+        </div>
+        <div class="info-box-body">
+          <div class="info-content">
+            <p id="info-text"></p>
+            <button onclick="closeInfo()">关闭</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="js/map-地图脚本.js"></script>
+</body>
+</html>
